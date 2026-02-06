@@ -36,7 +36,7 @@ Rather than treating data scarcity as a limitation, we reconceptualize it as a *
 ## 🗂️ Repository Structure
 
 ```
-bayesian-agri-inventory/
+bayesian-sparse-inventory/
 │
 ├── data/                          # Raw and processed datasets
 │   ├── raw/                       # KAMIS API outputs (6 endpoints)

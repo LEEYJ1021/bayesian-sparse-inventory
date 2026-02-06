@@ -79,6 +79,8 @@ bayesian-agri-inventory/
 ├── CHANGELOG.md                   # Version history and updates
 ├── CONTRIBUTING.md                # Contribution guidelines
 ├── DELIVERABLES_SUMMARY.md        # Project deliverables checklist
+├── LICENSE
+├── .gitignore
 ├── README.md                      # This file
 └── QUICKSTART.md                  # 5-minute quick-start guide
 ```

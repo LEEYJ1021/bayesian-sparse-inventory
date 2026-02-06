@@ -717,8 +717,6 @@ See [LICENSE](LICENSE) file for full terms.
 ## 🙏 Acknowledgments
 
 - **Data Provider**: Korea Agricultural Marketing Information Service (KAMIS) / Korea Agro-Fisheries & Food Trade Corporation (aT)
-- **Funding**: [Grant information, if applicable]
-- **Computing Resources**: [HPC cluster details, if applicable]
 - **Methodological Guidance**: Gelman et al. (2013) *Bayesian Data Analysis*, 3rd Edition; West & Harrison (1997) *Bayesian Forecasting and Dynamic Models*
 
 ---

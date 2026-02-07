@@ -358,7 +358,7 @@ policies[service_level == 0.95, mean(abs(fill_rate - 0.95) <= 0.02)]
 
 ### Three-Level Hierarchical Bayesian Model
 
-#### Mathematical Specification (Box 1 in paper)
+#### Mathematical Specification (Algorithm 1 in paper)
 
 **Level 1 — Observation Model**:
 ```
@@ -379,7 +379,7 @@ where c(i) denotes the category of item i.
 σ² ~ InvGamma(0.01, 0.01)    # Weakly informative on observation variance
 ```
 
-#### Shrinkage Estimator (Box 2)
+#### Shrinkage Estimator (Algorithm 2)
 
 **Posterior Mean**:
 ```
@@ -403,7 +403,7 @@ where the **data-adaptive shrinkage factor** is:
 Var[μ_ij | data] = [n_ij/σ² + 1/τ²_c]^(-1) = (1 - λ_ij)·σ²/n_ij
 ```
 
-### Adaptive Model Selection Algorithm (Box 3-5)
+### Adaptive Model Selection Algorithm (Algorithm 3-5)
 
 #### Case 1: Long Series (n ≥ 20) — Dynamic Linear Model
 **Specification**: Kalman filtering with discount factor δ=0.95
@@ -419,7 +419,7 @@ Var[μ_ij | data] = [n_ij/σ² + 1/τ²_c]^(-1) = (1 - λ_ij)·σ²/n_ij
 - Thinning: Keep every 2nd iteration
 - Effective samples: 1,500/chain (3,000 total)
 
-**Gibbs Sampling Steps** (Box 4):
+**Gibbs Sampling Steps** (Algorithm 4):
 1. Sample μ_ij | μ_c, τ²_c, σ², y_ij ~ N(μ̃_ij, σ̃²_ij)
 2. Sample μ_c | {μ_ij}, τ²_c ~ N(μ̃_c, τ̃²_c)
 3. Sample τ²_c | {μ_ij}, μ_c ~ InvGamma(α̃_τ, β̃_τ)
@@ -428,7 +428,7 @@ Var[μ_ij | data] = [n_ij/σ² + 1/τ²_c]^(-1) = (1 - λ_ij)·σ²/n_ij
 **Coverage**: 27.4% of sample (255 item-market pairs)
 
 #### Case 3: Extreme Sparsity (3 ≤ n < 10) — Empirical Bayes
-**Algorithm**: Closed-form James-Stein shrinkage estimator (Box 5)
+**Algorithm**: Closed-form James-Stein shrinkage estimator (Algorithm 5)
 
 **Stage 1 — Hyperparameter Estimation**:
 ```R
@@ -458,9 +458,9 @@ Var[μ_ij | data] ≈ ω_ij·σ̂²/n_ij
 
 **Key Advantage**: Stable computation without MCMC when likelihoods are weak (n < 10)
 
-### Bayesian Newsvendor Framework (Box 6-8)
+### Bayesian Newsvendor Framework (Algorithm 6-8)
 
-#### Posterior Predictive Distribution (Box 6)
+#### Posterior Predictive Distribution (Algorithm 6)
 
 **Formal Definition**:
 ```
@@ -483,7 +483,7 @@ Var[D_{t+h} | D_{1:t}] = E_θ[Var[D|θ]] + Var_θ[E[D|θ]]
 
 **Critical Insight**: Under sparse data, Var[μ] dominates (≈20× larger than E[σ²]/LT in our sample), driving near-proportional lead time scaling.
 
-#### Risk Buffer Capital and Risk-Adjusted Reorder Capital (Box 7)
+#### Risk Buffer Capital and Risk-Adjusted Reorder Capital (Algorithm 7)
 
 **Capital-Based Formulation** (due to unobserved demand quantities):
 
@@ -535,7 +535,7 @@ Q_upper = RARC / (p̄_recent - σ_price)
 
 **Implementation Note**: Negative theoretical RBC values (4.1% of policies) arise when hierarchical shrinkage produces near-deterministic forecasts. Operational truncation: RBC_operational = max(0, RBC_theoretical).
 
-#### Fill Rate and Expected Cost (Box 8)
+#### Fill Rate and Expected Cost (Algorithm 8)
 
 **Fill Rate Definition**:
 ```

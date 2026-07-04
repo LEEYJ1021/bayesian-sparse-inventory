@@ -1,0 +1,5 @@
+Metric,Hierarchical,Complete Pooling
+N held-out items,111.0,111.0
+90% CI coverage (%),91.0,92.8
+RMSE (log-price),1.041,1.0792
+Median p_B,0.472,0.466

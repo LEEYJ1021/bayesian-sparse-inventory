@@ -1,0 +1,6 @@
+stat,median_pB_normal,pct_extreme_normal,pct_adequate_normal,median_pB_studentt,pct_extreme_studentt,pct_adequate_studentt
+mean,0.507,0.0,100.0,0.567,10.5,84.8
+sd,0.96,64.4,24.5,0.858,50.9,33.2
+skew,0.797,29.4,48.9,0.762,16.4,73.5
+min,0.288,17.3,71.7,0.313,19.7,67.5
+max,0.89,23.8,53.6,0.908,26.9,47.7
